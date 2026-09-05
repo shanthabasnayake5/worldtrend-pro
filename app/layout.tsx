@@ -33,7 +33,11 @@ export const metadata: Metadata = {
     "entertainment",
     "sports",
   ],
+  verification: {
+    google: "sbiAmLI82w__1hdC11UGZx4YgJvwjFkT5-UP9K2X1Eo",
+  },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
