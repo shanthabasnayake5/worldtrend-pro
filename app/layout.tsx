@@ -13,10 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WorldTrend Pro",
-  description: "Discover What's Trending Worldwide",
+  title: {
+    default: "WorldTrend Pro",
+    template: "%s | WorldTrend Pro",
+  },
+  description:
+    "Discover what's trending worldwide in technology, AI, business, finance, health, science, travel, entertainment, sports, and more.",
+  keywords: [
+    "WorldTrend Pro",
+    "world trends",
+    "latest news",
+    "technology",
+    "artificial intelligence",
+    "business",
+    "finance",
+    "health",
+    "science",
+    "travel",
+    "entertainment",
+    "sports",
+  ],
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
