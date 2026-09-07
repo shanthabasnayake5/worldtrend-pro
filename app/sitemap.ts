@@ -12,46 +12,50 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/latest-news`,
       lastModified: new Date(),
     },
+
+    // Category pages
     {
-      url: `${baseUrl}/technology`,
+      url: `${baseUrl}/category/technology`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/ai`,
+      url: `${baseUrl}/category/ai`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/business`,
+      url: `${baseUrl}/category/business`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/finance`,
+      url: `${baseUrl}/category/finance`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/health`,
+      url: `${baseUrl}/category/health`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/science`,
+      url: `${baseUrl}/category/science`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/travel`,
+      url: `${baseUrl}/category/travel`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/lifestyle`,
+      url: `${baseUrl}/category/lifestyle`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/entertainment`,
+      url: `${baseUrl}/category/entertainment`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/sports`,
+      url: `${baseUrl}/category/sports`,
       lastModified: new Date(),
     },
+
+    // Information pages
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
@@ -61,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${baseUrl}/privacy`,
       lastModified: new Date(),
     },
     {
