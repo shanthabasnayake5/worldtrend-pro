@@ -57,7 +57,7 @@ export const articles: Article[] = [
     title: "Global Business Trends to Watch",
     excerpt:
       "A look at important business developments and emerging opportunities around the world.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 28, 2026",
     readingTime: "4 min read",
     image: "/articles/global-business.jpg",
@@ -76,7 +76,7 @@ export const articles: Article[] = [
     title: "Global Finance Trends to Watch",
     excerpt:
       "Explore the major financial trends, markets, and economic developments shaping the global economy.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 31, 2026",
     readingTime: "5 min read",
     image: "/articles/global-finance.jpg",
@@ -95,8 +95,7 @@ export const articles: Article[] = [
     title: "Health Trends Shaping Modern Life",
     excerpt:
       "Discover important health and wellness trends that are influencing everyday life around the world.",
-    author: "WorldTrend Pro",
-    publishedAt: "August 31, 2026",
+    author:"WorldTrend Pro Editorial Team", publishedAt: "August 31, 2026",
     readingTime: "5 min read",
     image: "/articles/health.jpg",
     imageAlt: "Modern health and wellness",
@@ -114,7 +113,7 @@ export const articles: Article[] = [
     title: "Science Discoveries Changing Our World",
     excerpt:
       "Explore fascinating scientific discoveries and developments that could shape the future.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 31, 2026",
     readingTime: "5 min read",
     image: "/articles/science.jpg",
@@ -133,7 +132,7 @@ export const articles: Article[] = [
     title: "Travel Trends Changing How We Explore the World",
     excerpt:
       "Discover the latest travel trends, destinations and changing ways people experience the world.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 31, 2026",
     readingTime: "4 min read",
     image: "/articles/travel.jpg",
@@ -152,7 +151,7 @@ export const articles: Article[] = [
     title: "Lifestyle Trends Shaping Everyday Life",
     excerpt:
       "Explore changing lifestyle habits, ideas and trends influencing people around the world.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 31, 2026",
     readingTime: "4 min read",
     image: "/articles/lifestyle.jpg",
@@ -171,7 +170,7 @@ export const articles: Article[] = [
     title: "Entertainment Trends Taking Over the World",
     excerpt:
       "Discover the latest trends in movies, music, gaming, streaming and digital entertainment.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 31, 2026",
     readingTime: "4 min read",
     image: "/articles/entertainment.jpg",
@@ -190,7 +189,7 @@ export const articles: Article[] = [
     title: "Global Sports Trends to Watch",
     excerpt:
       "Explore major developments, trends and stories shaping the world of sports.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 31, 2026",
     readingTime: "4 min read",
     image: "/articles/sports.jpg",
