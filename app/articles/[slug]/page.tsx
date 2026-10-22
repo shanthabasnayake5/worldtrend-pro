@@ -32,6 +32,15 @@ export async function generateMetadata({
 
   const articleUrl = `${SITE_URL}/articles/${article.slug}`;
 
+  const imageUrl = article.image.startsWith("http")
+    ? article.image
+    : `${SITE_URL}${article.image.startsWith("/") ? "" : "/"}${article.image}`;
+
+  const parsedDate = new Date(article.publishedAt);
+  const publishedTime = Number.isNaN(parsedDate.getTime())
+    ? undefined
+    : parsedDate.toISOString();
+
   return {
     title: `${article.title} | WorldTrend Pro`,
     description: article.excerpt,
@@ -44,17 +53,10 @@ export async function generateMetadata({
       url: articleUrl,
       siteName: "WorldTrend Pro",
       type: "article",
-      publishedTime: (() => {
-        const date = new Date(article.publishedAt);
-        return Number.isNaN(date.getTime())
-          ? undefined
-          : date.toISOString();
-      })(),
+      publishedTime,
       images: [
         {
-          url: article.image.startsWith("http")
-            ? article.image
-            : `${SITE_URL}${article.image.startsWith("/") ? "" : "/"}${article.image}`,
+          url: imageUrl,
           alt: article.imageAlt,
         },
       ],
@@ -63,11 +65,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: [
-        article.image.startsWith("http")
-          ? article.image
-          : `${SITE_URL}${article.image.startsWith("/") ? "" : "/"}${article.image}`,
-      ],
+      images: [imageUrl],
     },
   };
 }
@@ -129,9 +127,7 @@ export default async function ArticlePage({
 
             <span aria-hidden="true">•</span>
 
-            <time>
-              {article.publishedAt}
-            </time>
+            <time>{article.publishedAt}</time>
 
             <span aria-hidden="true">•</span>
 
@@ -164,10 +160,51 @@ export default async function ArticlePage({
             ))}
           </div>
 
+          {article.sources.length > 0 && (
+            <section
+              aria-labelledby="article-sources-heading"
+              className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8"
+            >
+              <h2
+                id="article-sources-heading"
+                className="text-2xl font-extrabold tracking-tight"
+              >
+                Sources &amp; Further Reading
+              </h2>
+
+              <p className="mt-3 leading-7 text-slate-600">
+                Explore these external resources to learn more about the
+                topics discussed in this article.
+              </p>
+
+              <ul className="mt-5 space-y-4">
+                {article.sources.map((source, index) => (
+                  <li key={`${article.slug}-source-${index}`}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-start gap-2 font-semibold leading-7 text-blue-700 underline decoration-blue-200 underline-offset-4 transition hover:text-blue-900 hover:decoration-blue-700"
+                    >
+                      <span>{source.title}</span>
+                      <span
+                        aria-hidden="true"
+                        className="shrink-0 text-sm"
+                      >
+                        ↗
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           <div className="mt-12 border-t border-slate-200 pt-6">
             <p className="text-sm leading-7 text-slate-500">
               Published by {article.author}. WorldTrend Pro aims to provide
               clear, useful information about developments around the world.
+              External resources are provided for further reading.
             </p>
 
             <Link
@@ -197,7 +234,10 @@ export default async function ArticlePage({
               Home
             </Link>
 
-            <Link href="/articles" className="transition hover:text-white">
+            <Link
+              href="/articles"
+              className="transition hover:text-white"
+            >
               Articles
             </Link>
 

@@ -1,4 +1,9 @@
 
+export type ArticleSource = {
+  title: string;
+  url: string;
+};
+
 export type Article = {
   slug: string;
   category: string;
@@ -10,6 +15,7 @@ export type Article = {
   image: string;
   imageAlt: string;
   content: string[];
+  sources: ArticleSource[];
 };
 
 export const articles: Article[] = [
@@ -24,24 +30,26 @@ export const articles: Article[] = [
     readingTime: "5 min read",
     image: "/articles/technology.jpg",
     imageAlt: "Modern technology and digital innovation",
-    content:  [
-  "Technology is evolving across many areas, including artificial intelligence, cybersecurity, cloud computing and digital communication. These developments influence how people work, learn, run businesses and access information. Understanding what these technologies can do, as well as their limitations, helps readers make more informed decisions.",
-
-  "Artificial intelligence is increasingly used for tasks such as summarizing information, translating languages, assisting with software development and supporting customer service. AI tools can save time, but their outputs may contain mistakes or outdated information. Important claims should therefore be checked against reliable sources, especially when making financial, medical or other significant decisions.",
-
-  "Cybersecurity is another important part of modern digital life. Individuals and organizations face risks such as phishing messages, stolen passwords, fraudulent websites and data breaches. Using unique passwords, enabling multi-factor authentication, installing software updates and checking website addresses can help reduce common security risks.",
-
-  "Cloud computing allows people and businesses to use online services for storing files, running applications and collaborating remotely. It can make digital tools easier to access, but users should also understand privacy settings, account security, service costs and how their information is stored.",
-
-  "Digital technology is also changing education, communication and business operations. Online learning platforms can provide access to educational material, while digital collaboration tools help teams work across different locations. However, access to reliable internet, digital skills, accessibility and protection of personal information remain important considerations.",
-
-  "When evaluating a new technology, readers should look beyond promotional claims. Useful questions include what problem the technology solves, how reliable it is, what it costs, what information it collects and what limitations it has. Independent testing, official documentation and reputable research can help people assess these questions more carefully.",
-
-  "Technology will continue to develop, but not every new product or trend will be useful for everyone. Staying informed, learning digital skills and protecting personal information can help individuals and organizations adapt. WorldTrend Pro aims to explain technology developments in clear language so readers can better understand their potential benefits, risks and real-world uses."
-],
-
+    content: [
+      "Technology is evolving across many areas, including artificial intelligence, cybersecurity, cloud computing and digital communication. These developments influence how people work, learn, run businesses and access information. Understanding what these technologies can do, as well as their limitations, helps readers make more informed decisions.",
+      "Artificial intelligence is increasingly used for tasks such as summarizing information, translating languages, assisting with software development and supporting customer service. AI tools can save time, but their outputs may contain mistakes or outdated information. Important claims should therefore be checked against reliable sources, especially when making financial, medical or other significant decisions.",
+      "Cybersecurity is another important part of modern digital life. Individuals and organizations face risks such as phishing messages, stolen passwords, fraudulent websites and data breaches. Using unique passwords, enabling multi-factor authentication, installing software updates and checking website addresses can help reduce common security risks.",
+      "Cloud computing allows people and businesses to use online services for storing files, running applications and collaborating remotely. It can make digital tools easier to access, but users should also understand privacy settings, account security, service costs and how their information is stored.",
+      "Digital technology is also changing education, communication and business operations. Online learning platforms can provide access to educational material, while digital collaboration tools help teams work across different locations. However, access to reliable internet, digital skills, accessibility and protection of personal information remain important considerations.",
+      "When evaluating a new technology, readers should look beyond promotional claims. Useful questions include what problem the technology solves, how reliable it is, what it costs, what information it collects and what limitations it has. Independent testing, official documentation and reputable research can help people assess these questions more carefully.",
+      "Technology will continue to develop, but not every new product or trend will be useful for everyone. Staying informed, learning digital skills and protecting personal information can help individuals and organizations adapt. WorldTrend Pro aims to explain technology developments in clear language so readers can better understand their potential benefits, risks and real-world uses.",
+    ],
+    sources: [
+      {
+        title: "NIST — Information Technology",
+        url: "https://www.nist.gov/information-technology",
+      },
+      {
+        title: "NIST — Cybersecurity, Privacy, and AI",
+        url: "https://www.nist.gov/itl/applied-cybersecurity/cybersecurity-privacy-and-ai",
+      },
+    ],
   },
-
   {
     slug: "artificial-intelligence-transforming-everyday-life",
     category: "AI",
@@ -59,8 +67,17 @@ export const articles: Article[] = [
       "The rapid development of AI is creating new opportunities while also raising important questions about privacy, employment and responsible technology.",
       "Understanding how AI works and how it is being used can help people make better decisions in an increasingly digital world.",
     ],
+    sources: [
+      {
+        title: "NIST — AI Risk Management Framework",
+        url: "https://airc.nist.gov/airmf-resources/",
+      },
+      {
+        title: "OECD — AI Principles",
+        url: "https://www.oecd.org/en/topics/ai-principles.html",
+      },
+    ],
   },
-
   {
     slug: "global-business-trends-to-watch",
     category: "Business",
@@ -78,8 +95,17 @@ export const articles: Article[] = [
       "Entrepreneurs and businesses that understand these changes may be better prepared to identify emerging opportunities.",
       "WorldTrend Pro follows major business trends and explains developments that may matter to businesses and consumers.",
     ],
+    sources: [
+      {
+        title: "World Bank — Small and Medium Enterprises (SMEs)",
+        url: "https://www.worldbank.org/en/topic/smefinance",
+      },
+      {
+        title: "OECD — Digital Economy",
+        url: "https://www.oecd.org/en/topics/digital.html",
+      },
+    ],
   },
-
   {
     slug: "global-finance-trends-to-watch",
     category: "Finance",
@@ -97,15 +123,25 @@ export const articles: Article[] = [
       "Investors and consumers are paying close attention to inflation, interest rates, currencies and global economic developments.",
       "Understanding major financial trends can help people make more informed decisions about money and the changing global economy.",
     ],
+    sources: [
+      {
+        title: "IMF — World Economic Outlook",
+        url: "https://www.imf.org/en/Publications/WEO",
+      },
+      {
+        title: "IMF — Publications",
+        url: "https://www.imf.org/en/Publications",
+      },
+    ],
   },
-
   {
     slug: "health-trends-shaping-modern-life",
     category: "Health",
     title: "Health Trends Shaping Modern Life",
     excerpt:
       "Discover important health and wellness trends that are influencing everyday life around the world.",
-    author:"WorldTrend Pro Editorial Team", publishedAt: "August 31, 2026",
+    author: "WorldTrend Pro Editorial Team",
+    publishedAt: "August 31, 2026",
     readingTime: "5 min read",
     image: "/articles/health.jpg",
     imageAlt: "Modern health and wellness",
@@ -115,8 +151,17 @@ export const articles: Article[] = [
       "People are also paying greater attention to healthy lifestyles, nutrition, physical activity and preventive care.",
       "WorldTrend Pro follows important health developments and presents useful information in a clear and accessible way.",
     ],
+    sources: [
+      {
+        title: "WHO — Health Topics",
+        url: "https://www.who.int/health-topics",
+      },
+      {
+        title: "WHO — Physical Activity",
+        url: "https://www.who.int/health-topics/physical-activity",
+      },
+    ],
   },
-
   {
     slug: "science-discoveries-changing-our-world",
     category: "Science",
@@ -134,8 +179,17 @@ export const articles: Article[] = [
       "Many scientific discoveries can eventually lead to new technologies and solutions to important global challenges.",
       "WorldTrend Pro follows major scientific developments and explains why they matter to people around the world.",
     ],
+    sources: [
+      {
+        title: "NASA — Science",
+        url: "https://science.nasa.gov/",
+      },
+      {
+        title: "NASA — Earth Science",
+        url: "https://science.nasa.gov/earth/",
+      },
+    ],
   },
-
   {
     slug: "travel-trends-changing-how-we-explore",
     category: "Travel",
@@ -153,8 +207,17 @@ export const articles: Article[] = [
       "Travelers are also showing growing interest in unique experiences, nature, culture and responsible tourism.",
       "WorldTrend Pro follows global travel trends and highlights developments that can inspire future journeys.",
     ],
+    sources: [
+      {
+        title: "UN Tourism — About the Organization",
+        url: "https://www.untourism.int/who-we-are",
+      },
+      {
+        title: "United Nations — Sustainable Tourism",
+        url: "https://sdgs.un.org/topics/sustainable-tourism",
+      },
+    ],
   },
-
   {
     slug: "lifestyle-trends-shaping-everyday-life",
     category: "Lifestyle",
@@ -172,8 +235,17 @@ export const articles: Article[] = [
       "People are also exploring simpler living, new hobbies and different ways to balance work and personal life.",
       "WorldTrend Pro follows interesting lifestyle trends and explores how they are changing modern society.",
     ],
+    sources: [
+      {
+        title: "WHO — Physical Activity",
+        url: "https://www.who.int/health-topics/physical-activity",
+      },
+      {
+        title: "OECD — Better Life Index",
+        url: "https://www.oecdbetterlifeindex.org/",
+      },
+    ],
   },
-
   {
     slug: "entertainment-trends-taking-over-the-world",
     category: "Entertainment",
@@ -191,8 +263,17 @@ export const articles: Article[] = [
       "Artificial intelligence and new digital technologies are also creating new possibilities for creators and audiences.",
       "WorldTrend Pro follows major entertainment trends and highlights developments attracting attention around the world.",
     ],
+    sources: [
+      {
+        title: "UNESCO — Culture",
+        url: "https://www.unesco.org/en/culture",
+      },
+      {
+        title: "OECD — Digital Economy",
+        url: "https://www.oecd.org/en/topics/digital.html",
+      },
+    ],
   },
-
   {
     slug: "global-sports-trends-to-watch",
     category: "Sports",
@@ -210,6 +291,16 @@ export const articles: Article[] = [
       "Major sporting events also have a significant impact on communities, businesses and international audiences.",
       "WorldTrend Pro follows important sports developments and brings interesting stories and trends to readers around the world.",
     ],
+    sources: [
+      {
+        title: "International Olympic Committee",
+        url: "https://olympics.com/ioc",
+      },
+      {
+        title: "WHO — Physical Activity",
+        url: "https://www.who.int/health-topics/physical-activity",
+      },
+    ],
   },
 ];
 
@@ -218,4 +309,3 @@ export function getArticleBySlug(
 ): Article | undefined {
   return articles.find((article) => article.slug === slug);
 }
-
