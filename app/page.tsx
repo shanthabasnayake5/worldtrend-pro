@@ -50,13 +50,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
-
       {/* Header */}
       <header className="sticky top-0 z-50 border-b bg-white/95 shadow-sm backdrop-blur">
-
         {/* Main Header */}
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-
           {/* Logo */}
           <Link href="/" className="group">
             <div className="text-2xl font-extrabold tracking-tight sm:text-3xl">
@@ -90,7 +87,6 @@ export default function Home() {
 
           {/* Search + Mobile Menu */}
           <div className="flex items-center gap-2">
-
             {/* Search Button */}
             <button
               type="button"
@@ -118,7 +114,6 @@ export default function Home() {
             >
               {menuOpen ? "✕" : "☰"}
             </button>
-
           </div>
         </div>
 
@@ -126,7 +121,6 @@ export default function Home() {
         {searchOpen && (
           <div className="border-t bg-white">
             <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6">
-
               <div className="relative">
                 <input
                   type="search"
@@ -153,7 +147,6 @@ export default function Home() {
               {/* Search Results */}
               {searchTerm.trim() && (
                 <div className="mt-4">
-
                   {searchResults.length > 0 ? (
                     <div className="grid gap-3">
                       {searchResults.map((article) => (
@@ -166,7 +159,6 @@ export default function Home() {
                           }}
                           className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-3 transition hover:border-blue-300 hover:shadow-md"
                         >
-
                           <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-xl bg-slate-200">
                             <Image
                               src={article.image}
@@ -186,7 +178,6 @@ export default function Home() {
                               {article.title}
                             </h3>
                           </div>
-
                         </Link>
                       ))}
                     </div>
@@ -202,10 +193,8 @@ export default function Home() {
                       </p>
                     </div>
                   )}
-
                 </div>
               )}
-
             </div>
           </div>
         )}
@@ -214,7 +203,6 @@ export default function Home() {
         {menuOpen && (
           <div className="border-t bg-white xl:hidden">
             <nav className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-
               <div className="grid gap-1">
                 {categories.map((category) => (
                   <Link
@@ -249,7 +237,6 @@ export default function Home() {
               >
                 Contact
               </Link>
-
             </nav>
           </div>
         )}
@@ -272,13 +259,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-
       </header>
 
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 py-12">
         <div className="rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 px-8 py-14 text-white shadow-xl">
-
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-blue-200">
             Discover What&apos;s Trending Worldwide
           </p>
@@ -294,7 +279,6 @@ export default function Home() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-
             <Link
               href="#latest"
               className="rounded-xl bg-white px-6 py-3 font-semibold text-blue-700 transition hover:bg-blue-50"
@@ -308,7 +292,6 @@ export default function Home() {
             >
               Trending Topics
             </Link>
-
           </div>
         </div>
       </section>
@@ -318,7 +301,6 @@ export default function Home() {
         id="trending"
         className="mx-auto max-w-7xl px-4 pb-16 sm:px-6"
       >
-
         <div className="mb-8 flex items-end justify-between">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-600">
@@ -335,7 +317,7 @@ export default function Home() {
           </div>
 
           <Link
-            href="#latest"
+            href="/articles"
             className="hidden text-sm font-bold text-blue-600 transition hover:text-blue-800 sm:block"
           >
             View All →
@@ -343,15 +325,12 @@ export default function Home() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
-
           {featuredArticles.map((article, index) => (
             <article
               key={article.slug}
               className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-
               <div className="relative h-56 overflow-hidden bg-slate-200">
-
                 <Image
                   src={article.image}
                   alt={article.imageAlt}
@@ -371,11 +350,9 @@ export default function Home() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-
               </div>
 
               <div className="p-6">
-
                 <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
                   {article.category}
                 </span>
@@ -389,7 +366,6 @@ export default function Home() {
                 </p>
 
                 <div className="mt-6 flex items-center justify-between">
-
                   <span className="text-xs font-medium text-slate-400">
                     WorldTrend Pro
                   </span>
@@ -400,24 +376,20 @@ export default function Home() {
                   >
                     Read Story →
                   </Link>
-
                 </div>
-
               </div>
             </article>
           ))}
-
         </div>
 
         <div className="mt-6 text-center sm:hidden">
           <Link
-            href="#latest"
+            href="/articles"
             className="font-bold text-blue-600 hover:text-blue-800"
           >
             View All Stories →
           </Link>
         </div>
-
       </section>
 
       {/* Latest News */}
@@ -425,7 +397,6 @@ export default function Home() {
         id="latest"
         className="mx-auto max-w-7xl px-4 pb-16 sm:px-6"
       >
-
         <div className="mb-8 flex items-end justify-between">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-600">
@@ -442,7 +413,7 @@ export default function Home() {
           </div>
 
           <Link
-            href="#trending"
+            href="/articles"
             className="hidden text-sm font-bold text-blue-600 transition hover:text-blue-800 sm:block"
           >
             View All →
@@ -450,12 +421,9 @@ export default function Home() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
-
           {mainStory && (
             <article className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-xl lg:col-span-2">
-
               <div className="relative flex h-64 items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-indigo-800 to-slate-900 md:h-80">
-
                 <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10" />
                 <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-blue-400/10" />
 
@@ -475,7 +443,6 @@ export default function Home() {
               </div>
 
               <div className="p-6 md:p-8">
-
                 <div className="flex flex-wrap items-center gap-3 text-xs font-medium text-slate-400">
                   <span>{mainStory.category}</span>
                   <span>•</span>
@@ -496,21 +463,17 @@ export default function Home() {
                 >
                   Continue Reading →
                 </Link>
-
               </div>
             </article>
           )}
 
           <div className="space-y-6">
-
             {sideStories.map((article, index) => (
               <article
                 key={article.slug}
                 className="group rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
-
                 <div className="flex gap-4">
-
                   <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-700 to-teal-900">
                     <span className="text-3xl font-black text-white/30">
                       {String(index + 2).padStart(2, "0")}
@@ -530,7 +493,6 @@ export default function Home() {
                       {article.category} • {article.publishedAt}
                     </p>
                   </div>
-
                 </div>
 
                 <Link
@@ -539,40 +501,33 @@ export default function Home() {
                 >
                   Read Story →
                 </Link>
-
               </article>
             ))}
-
           </div>
         </div>
 
         <div className="mt-8 text-center sm:hidden">
           <Link
-            href="#trending"
+            href="/articles"
             className="font-bold text-blue-600 hover:text-blue-800"
           >
             View All Latest Stories →
           </Link>
         </div>
-
       </section>
 
       {/* Newsletter */}
       <section className="relative overflow-hidden bg-slate-950 px-4 py-20 text-white sm:px-6">
-
         <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-blue-600/20 blur-3xl" />
         <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-purple-600/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-5xl">
-
           <div className="rounded-3xl border border-white/10 bg-white/5 px-6 py-10 shadow-2xl backdrop-blur sm:px-10 md:px-14 md:py-14">
-
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl shadow-lg">
               ✉
             </div>
 
             <div className="mx-auto mt-6 max-w-3xl text-center">
-
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-400">
                 WorldTrend Pro Newsletter
               </p>
@@ -585,14 +540,12 @@ export default function Home() {
                 Get the most interesting stories, emerging trends and important
                 developments from around the world delivered to your inbox.
               </p>
-
             </div>
 
             <form
               className="mx-auto mt-8 flex max-w-2xl flex-col gap-3 sm:flex-row"
               onSubmit={(event) => event.preventDefault()}
             >
-
               <label htmlFor="newsletter-email" className="sr-only">
                 Email address
               </label>
@@ -610,35 +563,27 @@ export default function Home() {
               >
                 Subscribe →
               </button>
-
             </form>
 
             <p className="mt-4 text-center text-xs text-slate-500">
               No spam. Unsubscribe anytime.
             </p>
-
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400">
-
         <div className="mx-auto max-w-7xl px-6 py-14">
-
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-
             {/* Brand */}
             <div className="lg:col-span-2">
-
               <Link
                 href="/"
                 className="text-2xl font-extrabold tracking-tight text-white"
               >
                 WorldTrend{" "}
-                <span className="text-blue-500">
-                  Pro
-                </span>
+                <span className="text-blue-500">Pro</span>
               </Link>
 
               <p className="mt-4 max-w-md text-sm leading-7 text-slate-400">
@@ -650,18 +595,15 @@ export default function Home() {
               <p className="mt-5 text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
                 Discover What&apos;s Trending Worldwide
               </p>
-
             </div>
 
             {/* Explore */}
             <div>
-
               <h3 className="text-sm font-bold uppercase tracking-wider text-white">
                 Explore
               </h3>
 
               <div className="mt-4 space-y-3">
-
                 <Link
                   href="#trending"
                   className="block text-sm transition hover:text-white"
@@ -696,20 +638,16 @@ export default function Home() {
                 >
                   Finance
                 </Link>
-
               </div>
-
             </div>
 
             {/* Company */}
             <div>
-
               <h3 className="text-sm font-bold uppercase tracking-wider text-white">
                 WorldTrend Pro
               </h3>
 
               <div className="mt-4 space-y-3">
-
                 <Link
                   href="/about"
                   className="block text-sm transition hover:text-white"
@@ -737,23 +675,16 @@ export default function Home() {
                 >
                   Terms of Service
                 </Link>
-
               </div>
-
             </div>
-
           </div>
 
           <div className="my-10 border-t border-white/10" />
 
           <div className="flex flex-col justify-between gap-4 text-sm md:flex-row md:items-center">
-
-            <p>
-              © 2026 WorldTrend Pro. All rights reserved.
-            </p>
+            <p>© 2026 WorldTrend Pro. All rights reserved.</p>
 
             <div className="flex flex-wrap gap-5">
-
               <Link
                 href="/privacy"
                 className="transition hover:text-white"
@@ -774,14 +705,10 @@ export default function Home() {
               >
                 Contact
               </Link>
-
             </div>
-
           </div>
-
         </div>
       </footer>
-
     </main>
   );
 }
