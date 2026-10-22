@@ -38,7 +38,7 @@ export const articles: Article[] = [
     title: "Artificial Intelligence Is Transforming Everyday Life",
     excerpt:
       "Explore how AI is changing work, creativity, business, and the way people live.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 28, 2026",
     readingTime: "5 min read",
     image: "/articles/artificial-intelligence.jpg",
