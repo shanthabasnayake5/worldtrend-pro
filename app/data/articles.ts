@@ -19,7 +19,7 @@ export const articles: Article[] = [
     title: "The Future of Technology Is Changing Faster Than Ever",
     excerpt:
       "Discover the latest technology trends, innovations, and ideas shaping the world.",
-    author: "WorldTrend Pro",
+    author: "WorldTrend Pro Editorial Team",
     publishedAt: "August 28, 2026",
     readingTime: "5 min read",
     image: "/articles/technology.jpg",
